@@ -5,10 +5,10 @@ spring:
   application:
     name: casualty-investigation
   datasource:
-    url: jdbc:h2:mem:casualtydb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/casualtydb
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: Maroon@54321
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,5 +16,5 @@ spring:
     open-in-view: false
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console

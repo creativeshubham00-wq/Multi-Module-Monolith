@@ -2,18 +2,14 @@ package com.dgshipping.casualtyinvestigation.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
 import java.time.LocalDate;
 
 public class CasualtyReportRequest {
 
-    @NotBlank(message = "vesselName is required")
     private String vesselName;
 
-    @NotNull(message = "incidentDate is required")
     private LocalDate incidentDate;
 
-    @NotBlank(message = "description is required")
     private String description;
 
     public String getVesselName() {

@@ -6,22 +6,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "training_courses")
 public class TrainingCourse extends BaseEntity {
 
-    @Column(nullable = false)
+    private Long id;
+
     private String courseName;
 
-    @Column(nullable = false)
     private String category;
 
-    @Column(nullable = false)
     private Integer durationDays;
 
-    @Column(nullable = false)
     private LocalDate startDate;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCourseName() {
         return courseName;
@@ -53,5 +64,21 @@ public class TrainingCourse extends BaseEntity {
 
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

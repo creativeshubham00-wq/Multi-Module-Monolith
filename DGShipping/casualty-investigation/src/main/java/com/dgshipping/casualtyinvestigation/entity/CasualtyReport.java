@@ -6,22 +6,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "casualty_reports")
 public class CasualtyReport extends BaseEntity {
 
-    @Column(nullable = false)
+    private Long id;
+
     private String vesselName;
 
-    @Column(nullable = false)
     private LocalDate incidentDate;
 
-    @Column(nullable = false, length = 2000)
     private String description;
 
-    @Column(nullable = false)
     private String status = "OPEN";
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 
     public String getVesselName() {
         return vesselName;
@@ -45,6 +48,26 @@ public class CasualtyReport extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getStatus() {
